@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duos Smestaj - Luksuzni apartmani u prirodi Sokobanje</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        
+        .nature-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nature-overlay::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, rgba(16, 185, 129, 0.3), transparent);
+            z-index: 1;
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        .ios-card {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+        }
+        
+        .swimming-pool-icon {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .contact-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <span class="text-emerald-500 text-2xl font-bold">DUOS</span>
+                    <span class="text-white ml-1">smestaj</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#pocetna" class="text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Početna</a>
+                        <a href="#apartmani" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Apartmani</a>
+                        <a href="#galerija" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Galerija</a>
+                        <a href="#lokacija" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Lokacija</a>
+                        <a href="#kontakt" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Kontakt</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-gray-300 hover:text-white focus:outline-none">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="pocetna" class="pt-24 pb-16 md:pt-32 md:pb-24 nature-overlay">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        <span class="text-emerald-400">Luksuzni apartmani</span><br>
+                        <span class="text-white">u srcu prirode Sokobanje</span>
+                    </h1>
+                    <p class="text-lg text-gray-300 mb-8 max-w-lg">
+                        Doživite savršen spoj moderne udobnosti i netaknute prirode u našim ekskluzivnim apartmanima Duos East i Duos West.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#apartmani" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-medium flex items-center transition duration-300">
+                            <span class="mr-2">Istražite</span>
+                            <span class="material-icons">arrow_forward</span>
+                        </a>
+                        <a href="#kontakt" class="border border-emerald-500 text-emerald-400 hover:bg-emerald-900 hover:bg-opacity-30 px-6 py-3 rounded-full font-medium flex items-center transition duration-300">
+                            <span class="material-icons mr-2">call</span>
+                            <span>Rezervišite</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="ios-card rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Duos Apartmani" class="w-full h-auto rounded-3xl">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-6">
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">location_on</span>
+                                <span class="text-white">Drenjar 2, Sokobanja</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="ios-card p-6 rounded-2xl">
+                    <div class="text-emerald-400 mb-4">
+                        <span class="material-icons text-4xl">landscape</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Panoramski pogled</h3>
+                    <p class="text-gray-400">Nesvakidašnji pogled na Sokobanjske planine i kotlinu sa prostranih terasa.</p>
+                </div>
+                <div class="ios-card p-6 rounded-2xl">
+                    <div class="swimming-pool-icon mb-4">
+                        <span class="material-icons text-4xl">pool</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Privatni bazen</h3>
+                    <p class="text-gray-400">Osvježite se u našem ekskluzivnom bazenu sa pogledom na prirodu.</p>
+                </div>
+                <div class="ios-card p-6 rounded-2xl">
+                    <div class="text-emerald-400 mb-4">
+                        <span class="material-icons text-4xl">villa</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Potpuna privatnost</h3>
+                    <p class="text-gray-400">Dve odvojene vikendice sa ograđenim dvorištem za maksimalnu diskreciju.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apartmani Section -->
+    <section id="apartmani" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Naši Apartmani</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Duos East -->
+                <div class="ios-card overflow-hidden rounded-2xl">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Duos East" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Duos East</h3>
+                            <p class="text-green-400">Istočno krilo</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">Istočno krilo našeg kompleksa sa prostranim terasama i panoramskim pogledom na planine.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">king_bed</span>
+                                <span class="text-gray-300">2 spavaće sobe</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">bathtub</span>
+                                <span class="text-gray-300">1 kupatilo</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">wifi</span>
+                                <span class="text-gray-300">Wi-Fi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">tv</span>
+                                <span class="text-gray-300">Digitalna TV</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-emerald-400 text-xl font-bold">Cena na upit</span>
+                            </div>
+                            <a href="duos-east.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center transition duration-300">
+                                <span>Detalji</span>
+                                <span class="material-icons ml-1 text-sm">chevron_right</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duos West -->
+                <div class="ios-card overflow-hidden rounded-2xl">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Duos West" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-6">
+                            <h3 class="text-2xl font-bold text-white">Duos West</h3>
+                            <p class="text-green-400">Zapadno krilo</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-6">Zapadno krilo sa unikatnim dizajnom i svim pogodnostima za udoban boravak.</p>
+                        
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">king_bed</span>
+                                <span class="text-gray-300">2 spavaće sobe</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">bathtub</span>
+                                <span class="text-gray-300">1 kupatilo</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">wifi</span>
+                                <span class="text-gray-300">Wi-Fi</span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="material-icons text-emerald-400 mr-2">tv</span>
+                                <span class="text-gray-300">Digitalna TV</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <span class="text-emerald-400 text-xl font-bold">Cena na upit</span>
+                            </div>
+                            <a href="duos-west.html" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center transition duration-300">
+                                <span>Detalji</span>
+                                <span class="material-icons ml-1 text-sm">chevron_right</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galerija" class="py-16 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Galerija</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Duos Apartmani" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Spoljašnji izgled</h3>
+                    </div>
+                </div>
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Bazen" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Privatni bazen</h3>
+                    </div>
+                </div>
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Enterijer" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Moderni enterijer</h3>
+                    </div>
+                </div>
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Teras" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Prostrana terasa</h3>
+                    </div>
+                </div>
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Spavaca soba" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Spavaća soba</h3>
+                    </div>
+                </div>
+                <div class="gallery-item ios-card rounded-xl overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Pogled" class="w-full h-64 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-medium">Panoramski pogled</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="galerija.html" class="inline-flex items-center text-emerald-400 hover:text-emerald-300 font-medium">
+                    <span>Pogledajte celu galeriju</span>
+                    <span class="material-icons ml-2">arrow_forward</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- VR Experience -->
+    <section class="py-16 bg-gradient-to-b from-black to-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card rounded-2xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8 md:p-12">
+                        <h2 class="text-3xl font-bold mb-4">360° VR Iskustvo</h2>
+                        <p class="text-gray-400 mb-6">Istražite naš kompleks kroz ekskluzivnu panoramu snimljenu dronom. Pogledajte lokaciju, okolinu i sve detalje naših apartmana u potpunoj 360° perspektivi.</p>
+                        <a href="#" class="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full font-medium inline-flex items-center transition duration-300">
+                            <span class="material-icons mr-2">vrpano</span>
+                            <span>Pokrenite VR turu</span>
+                        </a>
+                    </div>
+                    <div class="md:w-1/2 relative">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="VR Experience" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-r from-black via-transparent to-transparent md:bg-none"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="bg-black bg-opacity-70 rounded-full p-4">
+                                <span class="material-icons text-white text-4xl">play_circle_filled</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="lokacija" class="py-16 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Lokacija</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            
+            <div class="ios-card overflow-hidden rounded-2xl">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold mb-4">Duos Smestaj</h3>
+                        <p class="text-gray-400 mb-6">U Sokobanji u ulici Drenjar br.2 u mirnom delu grada, okružen zelenilom i predivnim pogledom na panoramu Sokobanje.</p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <span class="material-icons text-emerald-400 mr-3">location_on</span>
+                                <div>
+                                    <h4 class="font-medium">Adresa</h4>
+                                    <p class="text-gray-400">Drenjar 2, Sokobanja, Srbija</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-emerald-400 mr-3">directions_car</span>
+                                <div>
+                                    <h4 class="font-medium">Parking</h4>
+                                    <p class="text-gray-400">Zaseban parking unutar ograđenog dvorišta</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="material-icons text-emerald-400 mr-3">nature</span>
+                                <div>
+                                    <h4 class="font-medium">Okolina</h4>
+                                    <p class="text-gray-400">Mirno područje okruženo zelenilom sa panoramskim pogledom na planine</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 h-96">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.693104715156!2d21.87050031546689!3d42.66947097916735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4754e1e9a6d5e6a9%3A0x9a8d5e8c8e8c8e8c!2sSokobanja!5e0!3m2!1sen!2srs!4v1620000000000!5m2!1sen!2srs" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy"
+                            class="filter grayscale-50 contrast-125 brightness-90"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontakt" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-white mb-4">Rezervišite svoj boravak</h2>
+                <div class="w-20 h-1 bg-emerald-500 mx-auto"></div>
+            </div>
+            
+            <div class="ios-card max-w-3xl mx-auto p-8 md:p-10 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-green-600 bg-opacity-10"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 rounded-full bg-green-600 bg-opacity-10"></div>
+                <div class="relative z-10">
+                    <div class="text-center mb-10">
+                        <div class="contact-float inline-flex items-center justify-center w-20 h-20 bg-green-600 rounded-full mb-4">
+                            <span class="material-icons text-white text-3xl">call</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Goran</h3>
+                        <a href="tel:+381693833463" class="text-green-400 text-xl hover:text-green-300 transition-colors">069/38-33-463</a>
+                        <p class="text-gray-400 mt-2">Jedini kontakt za rezervacije</p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="ios-card bg-gray-800 bg-opacity-50 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-600 bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="material-icons text-green-400">schedule</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Radno vreme</h4>
+                                    <p class="text-gray-400 text-sm">00-24h, 7 dana u nedelji</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">Spremni smo da odgovorimo na sve vaše upite u bilo koje doba dana.</p>
+                        </div>
+                        
+                        <div class="ios-card bg-gray-800 bg-opacity-50 p-6">
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-green-600 bg-opacity-20 rounded-full flex items-center justify-center mr-4">
+                                    <span class="material-icons text-green-400">euro_symbol</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-white">Cene</h4>
+                                    <p class="text-gray-400 text-sm">Po dogovoru</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">Cene variraju u zavisnosti od perioda i dužine boravka. Kontaktirajte nas za detalje.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <div class="fixed bottom-6 right-6 z-50 floating-contact">
+        <a href="tel:+381693833463" class="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-4 shadow-xl flex items-center justify-center transition duration-300">
+            <span class="material-icons">call</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2 space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-emerald-400">
+                        <span class="material-icons">facebook</span>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-emerald-400">
+                        <span class="material-icons">instagram</span>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-gray-400 text-sm">
+                        &copy; 2023 Duos Smestaj. Sva prava zadržana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Gallery lightbox functionality would go here
+        // VR experience handler would go here
+    </script>
+</body>
+</html>
