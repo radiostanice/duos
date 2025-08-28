@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duos East - Luksuzni apartman u Sokobanji</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+
+        .nature-overlay {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nature-overlay::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            background: linear-gradient(to top, rgba(16, 185, 129, 0.3), transparent);
+            z-index: 1;
+        }
+
+        .gallery-item {
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+
+        .ios-card {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(20, 20, 20, 0.7);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+        }
+
+        .swimming-pool-icon {
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .feature-icon {
+            color: #10b981;
+            margin-right: 0.5rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        
+        .feature-text {
+            color: #e5e5e5;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-black bg-opacity-80 backdrop-blur-md fixed w-full z-50 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center">
+                    <a href="duos.html" class="flex items-center">
+                        <span class="text-emerald-500 text-2xl font-bold">DUOS</span>
+                        <span class="text-white ml-1">smestaj</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="duos.html" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Početna</a>
+
+                        <!-- Apartments dropdown menu -->
+                        <div class="relative group">
+                            <button class="text-emerald-400 px-3 py-2 rounded-md text-sm font-medium flex items-center">
+                                Apartmani
+                                <span class="material-icons ml-1 text-sm">expand_more</span>
+                            </button>
+                            <div class="absolute left-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white dark:bg-gray-800 ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                                <a href="duos-east.html" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Duos East</a>
+                                <a href="duos-west.html" class="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Duos West</a>
+                            </div>
+                        </div>
+
+                        <a href="duos.html#galerija" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Galerija</a>
+                        <a href="duos.html#lokacija" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Lokacija</a>
+                        <a href="duos.html#kontakt" class="text-gray-300 hover:text-emerald-400 px-3 py-2 rounded-md text-sm font-medium">Kontakt</a>
+                    </div>
+                </div>
+                <div class="md:hidden flex items-center min-h-[40px]">
+                    <button id="mobileMenuButton" class="text-gray-300 hover:text-emerald-400 dark:hover:text-white focus:outline-none flex items-center justify-center">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="pt-24 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-3xl md:text-4xl font-bold mb-8 text-center">Duos East</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEspolja1.jpg" alt="Duos East - Spoljašnji izgled" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEspolja2.jpg" alt="Duos East - Spoljašnji izgled" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra1.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra2.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra3.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra4.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra5.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+                <div class="gallery-item rounded-xl overflow-hidden">
+                    <img src="img/east/DEunutra6.jpg" alt="Duos East - Unutrašnjost" class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description Section -->
+    <section class="py-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-4 text-emerald-400">O apartmanu</h2>
+                <p class="text-gray-300 mb-4">
+                    Objekat Duos East nudi smeštaj u gradu Soko Banja sa besplatnim WiFi internetom, pogledom na planinu i sezonskim bazenom na otvorenom. Ovaj apartman ima sopstveni bazen, vrt i besplatan privatni parking.
+                </p>
+                <p class="text-gray-300 mb-4">
+                    Ovaj apartman sa terasom i pogledom na grad nudi dnevni boravak, flat-screen televizor, opremljenu kuhinju sa frižiderom i rernom, kao i 1 kupatilo sa tušem. Broj spavaćih soba je 1. U ovom apartmanu su obezbeđeni peškiri i posteljina.
+                </p>
+                <p class="text-gray-300 mb-4">
+                    Gosti objekta Duos East mogu da koriste igralište za decu.
+                </p>
+                <p class="text-gray-300">
+                    Aerodrom (Aerodrom Konstantin Veliki) je udaljen 51 km.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-8 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-400">Glavne karakteristike</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">home</span>
+                        <span class="feature-text">Ceo smeštaj samo za vas</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">local_parking</span>
+                        <span class="feature-text">Besplatan parking u okviru objekta</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">wifi</span>
+                        <span class="feature-text">Besplatan WiFi</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">family_restroom</span>
+                        <span class="feature-text">Porodične sobe</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">pool</span>
+                        <span class="feature-text">Bazen na otvorenom</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">balcony</span>
+                        <span class="feature-text">Balkon</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">ac_unit</span>
+                        <span class="feature-text">Klima-uređaj</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="material-icons feature-icon">deck</span>
+                        <span class="feature-text">Terasa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Surroundings Section -->
+    <section class="py-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-400">Okolina objekta</h2>
+                
+                <div class="mb-6">
+                    <div class="flex items-center mb-4">
+                        <span class="material-icons text-emerald-400 mr-2">location_on</span>
+                        <span class="text-white font-medium">Odlična lokacija - prikaži mapu</span>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4 text-white">Restorani i kafići</h3>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="flex items-start">
+                        <span class="material-icons text-emerald-400 mr-3">local_cafe</span>
+                        <div>
+                            <h4 class="font-medium text-white">Irish Pub</h4>
+                            <p class="text-gray-400">1,7 km</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="material-icons text-emerald-400 mr-3">local_cafe</span>
+                        <div>
+                            <h4 class="font-medium text-white">Caffe Jazz</h4>
+                            <p class="text-gray-400">30 km</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <span class="material-icons text-emerald-400 mr-3">local_cafe</span>
+                        <div>
+                            <h4 class="font-medium text-white">Istambul Caffe</h4>
+                            <p class="text-gray-400">33 km</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 class="text-xl font-semibold mb-4 text-white">Najbliži aerodromi</h3>
+                
+                <div class="flex items-start">
+                    <span class="material-icons text-emerald-400 mr-3">flight</span>
+                    <div>
+                        <h4 class="font-medium text-white">Aerodrom Konstantin Veliki</h4>
+                        <p class="text-gray-400">51 km</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- House Rules Section -->
+    <section class="py-8 bg-black">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card p-8 rounded-2xl">
+                <h2 class="text-2xl font-bold mb-6 text-emerald-400">Kućni red</h2>
+                
+                <p class="text-gray-300 mb-6">
+                    Objekat Duos East je otvoren za posebne zahteve - dodajte zahtev u sledećem koraku.
+                </p>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Prikaži raspoloživost</h3>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-medium text-white mb-2">Prijavljivanje</h4>
+                            <p class="text-gray-300 mb-1">od 13:30 do 21:30</p>
+                            <p class="text-gray-400 text-sm">Potrebno je da unapred obavestite objekat o tome kada stižete.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-medium text-white mb-2">Odjavljivanje</h4>
+                            <p class="text-gray-300">od 09:00 do 10:00</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Otkazivanje / plaćanje unapred</h3>
+                    <p class="text-gray-300">
+                        Pravila otkazivanja i plaćanja unapred se razlikuju u zavisnosti od vrste smeštaja. Unesite datume svog boravka i proverite uslove željene opcije.
+                    </p>
+                </div>
+                
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4 text-white">Deca i kreveti</h3>
+                    
+                    <div class="mb-4">
+                        <h4 class="font-medium text-white mb-2">Pravila o deci</h4>
+                        <p class="text-gray-300 mb-2">Deca bilo kog uzrasta su dobrodošla.</p>
+                        <p class="text-gray-300 mb-2">Deci koja imaju 18 ili više godina će u ovom objektu biti naplaćen iznos za odrasle.</p>
+                        <p class="text-gray-300">Kako biste videli tačne informacije o cenama i kapacitetu, molimo vas da u svoju pretragu dodate broj dece koja putuju sa vama i njihov uzrast.</p>
+                    </div>
+                    
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Pravila o krevecima i dodatnim krevetima</h4>
+                        <div class="mb-2">
+                            <p class="text-gray-300 mb-1">0 - 2 godine</p>
+                            <p class="text-gray-300 mb-1">Krevetac na zahtev</p>
+                            <p class="text-gray-300">Besplatno</p>
+                        </div>
+                        <p class="text-gray-300 mb-2">Broj dozvoljenih krevetaca zavisi od izabrane opcije. Za više informacija proverite opciju koju ste odabrali.</p>
+                        <p class="text-gray-300 mb-2">Dodatni kreveti nisu dostupni u ovom objektu.</p>
+                        <p class="text-gray-300">Svi kreveci zavise od raspoloživosti.</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Bez starosnog ograničenja</h4>
+                        <p class="text-gray-300">Ne postoji starosno ograničenje za prijavljivanje</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Samo gotovina</h4>
+                        <p class="text-gray-300">Ovaj objekat prihvata samo plaćanje gotovinom.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Za pušače</h4>
+                        <p class="text-gray-300">Pušenje nije dozvoljeno.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Zabave</h4>
+                        <p class="text-gray-300">Zabave/događaji nisu dozvoljeni</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Period za tišinu</h4>
+                        <p class="text-gray-300">Gosti treba da budu tihi između 22:00 i 09:00.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-medium text-white mb-2">Kućni ljubimci</h4>
+                        <p class="text-gray-300">Kućni ljubimci nisu dozvoljeni.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="ios-card max-w-3xl mx-auto p-8 md:p-10 relative overflow-hidden">
+                <div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-green-600 bg-opacity-10"></div>
+                <div class="absolute -left-20 -bottom-20 w-64 h-64 rounded-full bg-green-600 bg-opacity-10"></div>
+                <div class="relative z-10">
+                    <div class="text-center mb-10">
+                        <div class="contact-float inline-flex items-center justify-center w-20 h-20 bg-green-600 rounded-full mb-4">
+                            <span class="material-icons text-white text-3xl">call</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Goran</h3>
+                        <a href="tel:+381693833463" class="contact-phone text-xl hover:text-green-300 transition-colors">069/38-33-463</a>
+                        <p class="text-gray-400 mt-2">Jedini kontakt za rezervacije</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <div class="fixed bottom-6 right-6 z-50 floating-contact">
+        <a href="tel:+381693833463" class="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full p-4 shadow-xl flex items-center justify-center transition duration-300">
+            <span class="material-icons">call</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:order-2">
+                    <a href="https://instagram.com/duos.smestaj" target="_blank" class="text-gray-400 hover:text-emerald-400 transition-colors">
+                        <span class="material-icons text-2xl">instagram</span>
+                    </a>
+                </div>
+                <div class="mt-8 md:mt-0 md:order-1">
+                    <p class="text-center text-gray-400 text-sm">
+                        &copy; 2023 Duos Smestaj. Sva prava zadržana.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.createElement('div');
+        mobileMenu.id = 'mobileMenu';
+        mobileMenu.className = 'hidden fixed top-16 left-0 right-0 bg-white dark:bg-black dark:bg-opacity-95 bg-opacity-95 z-40 shadow-lg border-t border-gray-200 dark:border-gray-800 transition-all duration-300';
+        
+        mobileMenu.innerHTML = `
+            <div class="container mx-auto py-4 px-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="duos.html" class="text-gray-800 dark:text-white text-lg font-medium py-2 border-b border-gray-200 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Početna</a>
+
+                    <!-- Mobile Apartments dropdown -->
+                    <div class="apartments-dropdown py-2 border-b border-gray-200 dark:border-gray-800">
+                        <button class="apartments-toggle flex items-center justify-between w-full text-gray-800 dark:text-white text-lg font-medium hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">
+                            Apartmani
+                            <span class="material-icons apartments-icon">expand_more</span>
+                        </button>
+                        <div class="apartments-content hidden mt-2 pl-4 space-y-2">
+                            <a href="duos-east.html" class="block text-gray-700 dark:text-gray-300 py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Duos East</a>
+                            <a href="duos-west.html" class="block text-gray-700 dark:text-gray-300 py-1 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Duos West</a>
+                        </div>
+                    </div>
+
+                    <a href="duos.html#galerija" class="text-gray-800 dark:text-white text-lg font-medium py-2 border-b border-gray-200 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Galerija</a>
+                    <a href="duos.html#lokacija" class="text-gray-800 dark:text-white text-lg font-medium py-2 border-b border-gray-200 dark:border-gray-800 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Lokacija</a>
+                    <a href="duos.html#kontakt" class="text-gray-800 dark:text-white text-lg font-medium py-2 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors">Kontakt</a>
+                </div>
+            </div>
+        `;
+        
+        document.body.appendChild(mobileMenu);
+        
+        // Toggle mobile menu
+        mobileMenuButton.addEventListener('click', function() {
+            if (mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuButton.innerHTML = '<span class="material-icons">close</span>';
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<span class="material-icons">menu</span>';
+            }
+        });
+        
+        // Close mobile menu when clicking on links
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.innerHTML = '<span class="material-icons">menu</span>';
+            });
+        });
+        
+        // Toggle apartments dropdown in mobile menu
+        const apartmentsToggle = mobileMenu.querySelector('.apartments-toggle');
+        const apartmentsContent = mobileMenu.querySelector('.apartments-content');
+        const apartmentsIcon = mobileMenu.querySelector('.apartments-icon');
+        
+        apartmentsToggle.addEventListener('click', function() {
+            apartmentsContent.classList.toggle('hidden');
+            if (apartmentsContent.classList.contains('hidden')) {
+                apartmentsIcon.textContent = 'expand_more';
+            } else {
+                apartmentsIcon.textContent = 'expand_less';
+            }
+        });
+    </script>
+</body>
+</html>

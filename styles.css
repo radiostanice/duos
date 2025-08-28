@@ -1,0 +1,513 @@
+
+    /* Ensure text on images remains consistent regardless of theme */
+    .absolute.bottom-0.left-0.p-6 h3,
+    .absolute.bottom-0.left-0.p-6 p,
+    .absolute.bottom-0.left-0.right-0 span,
+    .absolute.bottom-0.left-0.right-0 .flex .text-white {
+        color: white !important; /* Force white text on images */
+    }
+    
+    /* Ensure gradients on images remain dark for text readability */
+    .absolute.inset-0.bg-gradient-to-t.from-black.to-transparent,
+    .absolute.inset-0.bg-gradient-to-r.from-black.via-transparent.to-transparent,
+    .absolute.bottom-0.left-0.right-0.bg-gradient-to-t.from-black.to-transparent {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent) !important;
+    }
+    
+    /* Ensure location icon remains consistent */
+    .absolute.bottom-0.left-0.right-0 .flex .material-icons {
+        color: var(--color-primary-light) !important;
+    }
+    
+    /* Dropdown styling */
+    .group:hover .group-hover\:block {
+        display: block;
+    }
+    
+    /* Improved mobile menu styling */
+    #mobileMenu {
+        max-height: calc(100vh - 4rem);
+        overflow-y: auto;
+        background-color: var(--color-bg);
+        border-color: var(--color-gray-light);
+    }
+
+    .dark #mobileMenu {
+        background-color: rgba(0, 0, 0, 0.95);
+        border-color: #374151;
+    }
+
+    /* Ensure mobile menu links follow theme */
+    #mobileMenu a {
+        color: var(--color-text);
+        border-color: var(--color-gray-light);
+    }
+
+    .dark #mobileMenu a {
+        color: #e5e7eb;
+        border-color: #374151;
+    }
+
+    #mobileMenu a:hover {
+        color: var(--color-primary);
+    }
+    
+    /* Animation for dropdown */
+    .apartments-content {
+        transition: all 0.3s ease;
+    }
+    
+    /* Improved hover effects */
+    .text-gray-300.hover\:text-emerald-400:hover {
+        color: var(--color-primary);
+    }
+    
+    /* Improved mobile menu toggle */
+    #mobileMenuButton {
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 24px; /* Ensure consistent height */
+    }
+
+    #mobileMenuButton:hover {
+        transform: scale(1.1);
+    }
+
+    /* Ensure mobile menu dropdown follows theme properly */
+    #mobileMenu .apartments-content a {
+        color: var(--color-gray-dark);
+    }
+
+    .dark #mobileMenu .apartments-content a {
+        color: #d1d5db;
+    }
+
+    #mobileMenu .apartments-content a:hover {
+        color: var(--color-primary);
+    }
+
+    /* Fix apartments toggle button color in light mode */
+    #mobileMenu .apartments-toggle {
+        color: var(--color-text) !important;
+    }
+
+    .dark #mobileMenu .apartments-toggle {
+        color: #e5e7eb !important;
+    }
+
+    #mobileMenu .apartments-toggle:hover {
+        color: var(--color-primary) !important;
+    }
+    
+    /* Dropdown arrow animation */
+    .apartments-icon {
+        transition: transform 0.3s ease;
+    }
+    
+    .apartments-toggle:not(.collapsed) .apartments-icon {
+        transform: rotate(180deg);
+    }
+
+    :root {
+        --color-primary: #047857;  /* Darker green for better contrast */
+        --color-primary-light: #10b981;
+        --color-text: #1f2937;     /* Dark gray for better readability */
+        --color-bg: #ffffff;       /* Pure white background */
+        --color-card: rgba(255, 255, 255, 0.95); /* More opaque cards */
+        --color-gray-light: #f3f4f6;
+        --color-gray-dark: #6b7280;
+    }
+
+    /* Contact section phone number styling */
+    .contact-phone {
+        color: #059669; /* Darker green for light mode */
+        animation: pulse 2s infinite, pulseShadow 2s infinite;
+        transition: all 0.3s ease;
+    }
+
+    .dark .contact-phone {
+        color: #10b981; /* Original green for dark mode */
+    }
+
+    .contact-phone:hover {
+        color: #047857;
+        animation: none;
+    }
+
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.7; }
+    }
+
+    @keyframes pulseShadow {
+        0%, 100% {
+            text-shadow: 0 0 5px rgba(5, 150, 105, 0.3);
+        }
+        50% {
+            text-shadow: 0 0 20px rgba(5, 150, 105, 0.6), 0 0 30px rgba(5, 150, 105, 0.4);
+        }
+    }
+
+    /* Subtle floating animation for contact button */
+    .subtle-float {
+        animation: subtleFloat 4s ease-in-out infinite;
+    }
+
+    @keyframes subtleFloat {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-8px);
+        }
+    }
+
+    /* Hero video styling */
+    .hero-video {
+        max-height: 50vh; /* Limit video height to 50% of viewport height to prevent blurriness */
+        object-fit: cover;
+    }
+
+    /* Google Maps responsive styling - full height, no extra padding */
+    .google-map-container {
+        height: 100%;
+        min-height: 300px;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .google-map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        display: block;
+        flex: 1;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Ensure map takes full height on all screen sizes */
+    @media (max-width: 768px) {
+        .google-map-container {
+            min-height: 250px;
+            height: 100%;
+        }
+    }
+
+    /* Remove any default padding from parent containers */
+    .ios-card .google-map-container {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    /* Specific override for map container in ios-card */
+    .ios-card > div > .google-map-container {
+        padding: 0 !important;
+        margin: 0 !important;
+        height: 100% !important;
+    }
+
+    /* Ensure the map iframe takes full container height */
+    .google-map-container iframe {
+        height: 100% !important;
+        min-height: 300px !important;
+    }
+
+    /* Navigation responsive fixes - more aggressive */
+    .nav-links {
+        gap: 0.5rem; /* Base smaller gap */
+        flex-wrap: nowrap; /* Prevent wrapping */
+    }
+
+    .nav-links > * {
+        flex-shrink: 0; /* Prevent shrinking */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    @media (max-width: 1024px) {
+        .nav-links {
+            gap: 0.375rem; /* Reduce gap more aggressively */
+        }
+
+        .nav-links a {
+            font-size: 0.8rem; /* Smaller font size */
+            padding: 0.375rem 0.5rem; /* Reduce padding more */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .nav-links {
+            gap: 0.25rem; /* Very small gap on mobile */
+        }
+
+        .nav-links a {
+            font-size: 0.75rem; /* Even smaller font on mobile */
+            padding: 0.25rem 0.375rem; /* Minimal padding */
+        }
+    }
+
+    @media (max-width: 640px) {
+        .nav-links {
+            gap: 0.125rem; /* Minimal gap on very small screens */
+        }
+
+        .nav-links a {
+            font-size: 0.7rem; /* Smallest font size */
+            padding: 0.125rem 0.25rem; /* Minimal padding */
+        }
+    }
+
+    /* Contact section icons styling for better visibility */
+    .contact-icon {
+        color: #059669; /* Darker green for light mode */
+    }
+
+    .dark .contact-icon {
+        color: #10b981; /* Original green for dark mode */
+    }
+    
+    .dark {
+        --color-primary: #10b981;
+        --color-primary-light: #34d399;
+        --color-text: #e5e7eb;
+        --color-bg: #0a0a0a;
+        --color-card: rgba(20, 20, 20, 0.7);
+        --color-gray-light: #374151;
+        --color-gray-dark: #9ca3af;
+    }
+    
+    body {
+        color: var(--color-text);
+        background-color: var(--color-bg);
+    }
+    
+    .ios-card {
+        background: var(--color-card);
+        border-color: var(--color-gray-light);
+    }
+    
+    /* Fix text colors for light mode */
+    .text-gray-300, .text-gray-400 {
+        color: var(--color-gray-dark);
+    }
+
+    .text-white {
+        color: var(--color-text);
+    }
+
+    /* Button text colors for themes */
+    .bg-emerald-600, .bg-emerald-700 {
+        color: white;
+    }
+
+    .dark .bg-emerald-600, .dark .bg-emerald-700 {
+        color: white;
+    }
+
+    /* Ensure button text is always readable */
+    button.bg-emerald-600, button.bg-emerald-700,
+    a.bg-emerald-600, a.bg-emerald-700 {
+        color: white !important;
+    }
+    
+    .bg-gray-800, .bg-gray-900, .bg-black {
+        background-color: var(--color-gray-light);
+    }
+    
+    .border-gray-800 {
+        border-color: var(--color-gray-light);
+    }
+    
+    /* Adjust emerald colors for better contrast */
+    .bg-emerald-600 {
+        background-color: var(--color-primary);
+    }
+    
+    .hover\:bg-emerald-700:hover {
+        background-color: var(--color-primary);
+    }
+    
+    .text-emerald-400 {
+        color: var(--color-primary);
+    }
+    
+    .hover\:text-emerald-400:hover {
+        color: var(--color-primary);
+    }
+    
+    /* Fix specific sections for light theme */
+    .bg-black, #galerija.bg-black {
+        background-color: var(--color-bg);
+    }
+    
+    .bg-gradient-to-b.from-black.to-gray-900 {
+        background: var(--color-bg);
+    }
+    
+    footer.bg-black {
+        background-color: var(--color-bg);
+    }
+    
+    nav.bg-black {
+        background-color: var(--color-bg);
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Fix mobile menu for light theme */
+    #mobileMenu.bg-black {
+        background-color: var(--color-bg);
+    }
+    
+    /* Fix gradients and overlays */
+    .nature-overlay::after {
+        background: linear-gradient(to top, rgba(4, 120, 87, 0.2), transparent);
+    }
+
+    .absolute.inset-0.bg-gradient-to-t.from-black.to-transparent,
+    .absolute.inset-0.bg-gradient-to-r.from-black.via-transparent.to-transparent {
+        background: linear-gradient(to top, rgba(255, 255, 255, 0.7), transparent);
+    }
+
+    /* Slideshow styles */
+    .slideshow-container {
+        position: relative;
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slideshow-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+
+    .slideshow-nav:hover {
+        background: rgba(16, 185, 129, 0.8);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .slideshow-prev {
+        left: 10px;
+    }
+
+    .slideshow-next {
+        right: 10px;
+    }
+
+    .slideshow-dots {
+        position: absolute;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 8px;
+        z-index: 10;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background: #10b981;
+        transform: scale(1.2);
+    }
+
+    .dot:hover {
+        background: rgba(16, 185, 129, 0.8);
+    }
+
+    /* Slide text overlays */
+    .slide .slide-text {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        padding: 20px 20px 40px 20px; /* Added bottom padding to prevent overlap */
+        color: white;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.3s ease;
+    }
+
+    .slide .slide-text h4 {
+        color: white;
+        margin-bottom: 4px;
+    }
+
+    .slide .slide-text p {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 12px;
+        margin: 0;
+    }
+
+    .slide:not(.active) .slide-text {
+        opacity: 0;
+    }
+
+    /* Responsive slideshow */
+    @media (max-width: 1024px) {
+        .slideshow-container {
+            height: 280px;
+        }
+
+        .slideshow-nav {
+            width: 35px;
+            height: 35px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .slideshow-container {
+            height: 240px;
+        }
+
+        .slideshow-nav {
+            width: 30px;
+            height: 30px;
+        }
+    }
